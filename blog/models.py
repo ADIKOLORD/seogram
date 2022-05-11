@@ -8,7 +8,10 @@ class Comment (models.Model):
     email = models.EmailField()
     website = models.URLField()
     message = models.TextField()
-    blog = models.ForeignKey(Post, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Post, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return self.name
 
 
 # Create your models here.
